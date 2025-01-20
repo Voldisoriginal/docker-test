@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api1:
+    image: app1_image  # используем собранный образ
+    build:
+      context: ./app1 # место храниения файла контекста
+    environment:
+      - API=http://api2:8001,http://api3:8002,http://api1:8000  # Указываем URL второго API
+    ports:
+      - "8000:8000"
+
+  api2:
+    image: app2_image  # используем собранный образ
+    build:
+      context: ./app2 # место храниения файла контекста
+
+    ports:
+      - "8001:8001"
+  api3:
+    image: app3_image  # используем собранный образ
+    build:
+      context: ./app3 # место храниения файла контекста
+
+    ports:
+      - "8002:8002"
