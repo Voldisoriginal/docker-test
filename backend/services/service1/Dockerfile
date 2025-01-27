@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Укажите команду для выполнения при запуске контейнера
-CMD ["uvicorn", "app3:app", "--host", "0.0.0.0", "--port", "8002"]
+CMD ["uvicorn", "app1:app", "--host", "0.0.0.0", "--port", "8001"]

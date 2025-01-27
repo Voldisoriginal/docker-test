@@ -20,14 +20,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock  # Монтирование Docker сокета
     networks:
       - mynetwork
-  vueapp:  # Сервис для Vue.js приложения
-    build:
-      context: ./frontend  # Укажите путь к вашему Vue.js приложению, на основе которого будет построен образ
-      dockerfile: Dockerfile  # Укажите конкретный Dockerfile, если он имеет другое имя
-    ports:
-      - "8080:8080"  # Публикуем порт для доступа к веб-приложению
-    networks:
-      - mynetwork
+
 networks:
   mynetwork:
     driver: bridge
